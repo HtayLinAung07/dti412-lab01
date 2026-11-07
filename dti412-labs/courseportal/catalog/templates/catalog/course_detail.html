@@ -1,0 +1,41 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}{{ course.code }} - Syllabus Detail{% endblock %}
+
+{% block content %}
+
+<div class="card shadow-sm">
+
+    <div class="card-header bg-primary text-white">
+
+        <h3>{{ course.title }}</h3>
+
+        <span>{{ course.code }}</span>
+
+    </div>
+
+    <div class="card-body">
+
+        <h5>Course Overview & Description</h5>
+
+        <p>{{ course.description }}</p>
+
+        <p><strong>Course Code:</strong> {{ course.code }}</p>
+
+        <p><strong>Credits:</strong> {{ course.credits }}</p>
+
+        <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+
+        <a href="{% url 'catalog:inquiry' %}" class="btn btn-success">
+            Submit Question for Course
+        </a>
+
+        <a href="{% url 'catalog:course_list' %}"
+           class="btn btn-secondary">
+            Back to Course Catalog
+        </a>
+
+    </div>
+</div>
+
+{% endblock %}
